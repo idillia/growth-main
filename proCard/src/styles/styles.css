@@ -1,0 +1,412 @@
+#app {
+  max-width: 1300px;
+}
+
+#app, body{
+  font: 1em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
+  /*min-width: 100%;*/
+ 
+  margin: 0 auto;
+  /*overflow: auto;*/
+  background-color: #EAECF0 !important;
+}
+
+.container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+a.active {
+  color: orange;
+}
+
+nav {
+  padding-top: 1em;
+  background-color: #34a2ce !important;
+  border-color: #34a2ce !important;
+}
+
+.tile h2 {
+  font-size: 1em;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 25px;
+  padding-top: 20px;
+  margin: 0;
+  height: 3em;
+  background-color: white;
+}
+
+.cta  {
+  font-size: 1em;
+  /*font-weight: 700;*/
+  color: #000;
+  /*text-transform: uppercase;*/
+  text-align: left;
+  padding-left: 25px;
+  padding-top: 20px;
+  margin: 0;
+  /*height: 3em;*/
+  background-color: white;
+}
+
+
+
+.line {
+    height: 0.3em;
+    width: 100%;
+    background-color: #EAECF0;
+}
+
+.archetype-container, .tagline-body {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    background-color: white;
+}
+.archetype-image {
+    background-size: contain;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+.archetype-name {
+    height: 2em;
+    line-height: 2em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 1.5em;
+}
+.archCol {
+  /*width:33%;*/
+}
+
+
+.tagline-body {
+  font-size: 1em;
+  margin-bottom: 1.5em;
+}
+
+.col-lg-2 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.three-arch {
+  padding-top: 1em;
+  /*padding-left: 3vh;*/
+}
+.strength {
+  display: inline-block;
+  padding: 8px 7px 7px 30px;
+  border-radius: 5px;
+  color: #313D4E;
+  text-transform: uppercase;
+  height: 1em;
+  line-height: 1em;
+  font-size: 0.9em;
+  font-weight: 500;
+  background: url(./../images/icon-grey-star.png) no-repeat;
+  background-color: #F3F4F6;
+  background-position: 1em center;
+  background-size: 1em;
+  margin: 5px;
+  text-align: right;
+  text-transform: uppercase;
+  height: 2.2em;
+}
+
+
+/* Widget */
+
+
+#apple-link  {
+  border-color: #ff6363 !important;
+}
+
+#apple-link > a {
+  color: white;
+  text-decoration: none;
+} 
+
+#android-link {
+   border-color: #fb3 !important;
+}
+
+#android-link > a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-primary {
+  padding: 11px 0;
+  width: 130px;
+}
+
+.gc-btn-red {
+  border: 0;
+  background-color: #ff6363 !important;
+  color: #fff;
+  padding: 13px 40px;
+  border-radius: 3px;
+  transition: all .1s ease-in-out;
+}
+
+.dnld-icon {
+  font-size: 2rem;
+  float: left;
+  height: 10px;
+  margin: -7px 0 0 12px;
+}
+
+.gc-btn-orange {
+  border: 0;
+  background-color: #fb3 !important;
+  color: #fff; 
+  padding: 13px 40px;
+  border-radius: 3px;
+  transition: all .1s ease-in-out;
+}   
+
+.ProfileAvatar {
+  background: #fff;
+  border: 5px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 1px rgba(136,153,166,0.15);
+  height: 100px;
+  position: relative;
+  width: 100px;
+  display: table;
+  margin: 0 auto;
+}
+
+.ProfileAvatar-image {
+  border-radius: 8px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+} 
+
+.twitter-handler {
+  color: #8899a6;
+  margin-bottom: 2em;
+}
+.twitter-name {
+  font-size: 2em;
+  color: #313D4E;
+  font-weight: 500;
+}
+.twitter-avatar {
+  text-align: center;
+}
+.text-widget {
+/*  display: table;
+*/  margin: 0 auto;
+}
+
+
+.three-arch > div.col-lg-4, div.col-md-4, div.col-sm-4 {
+  padding: 0 !important;  
+}
+
+/*.three-arch div:first-child {
+  padding-left:15px !important;
+}
+
+.three-arch div:last-child {
+  padding-right:15px !important;
+}*/
+
+.sc-wrapper > div:first-child {
+  margin-bottom: 1.5em;
+}
+
+.sc-wrapper > div:last-child {
+  margin-bottom: 1.5em;
+}
+
+/*FRONT PAGE*/
+
+.page-landing {
+    margin-top: -20px;
+    background-color: #fff;
+    min-height: 600px;
+    background-size: 1200px;
+    /*background-repeat: no-repeat;*/
+}
+
+.page-landing .content h1.tagline {
+  font-size: 44px;
+}
+.page-landing .content h1 {
+    font-weight: 500;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #34A2DF;
+    font-family: 'Raleway' ,serif;
+}
+
+.phone{
+    /*width: 55%;*/
+    /*min-width: 230px;*/
+    width: 300px;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #white;
+    text-align: center;
+}
+.phone img {
+    max-width: 100%;
+}
+.img-container {
+    display: inline-block;
+    position: relative;
+}
+.positioning{
+  position: absolute;
+  left: 15px;
+  top: 67px;
+  padding: 4px;
+  font-size: 17px;
+  line-height: 18px;
+}
+.positioning > img {
+  width: 231px;
+  height: 407px;
+}
+
+/*.cta-wrap {
+  height: 80px;
+  border: 1px solid black;
+} 
+
+.cta-wrap div {
+  border: 1px solid red;
+  float: left;
+
+}
+
+.cta-text-me {
+    margin-right:10px;
+}
+
+.cta-apple-btn {
+    margin-right:10px;
+
+}.cta-android-btn {
+    margin-right:10px;
+}*/
+
+.cta-apple-btn {
+  width:20%;
+  padding:10px;
+  float: left;
+  box-sizing: border-box;
+
+}.cta-android-btn {
+  width: 20%;
+  padding: 10px;
+  box-sizing: border-box;
+  float: left;
+}
+.cta-text-me {
+  float: left;  
+  width: 60%;
+  padding: 10px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+
+.cta-text {
+  padding-bottom: 30px;
+  padding-left: 30px !important; 
+}
+.cta-margin {
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+  .text-me-hide {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
