@@ -1,0 +1,12 @@
+node_modules
+*.json
+*.csv
+.DS_Store
+config*.js
+images/
+.firebaserc
+database.rules.json
+firebase.json
+
+
+
