@@ -1,6 +1,6 @@
-  var Twit = require('twit');
+var Twit = require('twit');
 var moment = require('moment');
-var config = require('./config').anawremer;
+var config = require('./config').FrankGoodCo;
 var fs = require('fs');
 var T = new Twit(config);
 var _ = require('underscore');
@@ -9,26 +9,16 @@ var fs = require('fs');
 var file = './json/profiles.json';
 var readyTweetUsers = require(file);
 
-// var tweeted = './json/already_tweeted.json';
-// var already_tweeted = require(tweeted);
-
-
-// var file = './db_fire/tweeted_users.json';
-// var readyTweetUsers = require(file);
-
-// var tweeted = './json/already_tweeted.json';
-// var already_tweeted = require(tweeted);
-
  var twitterHandlers = [];
 
 
 var today = moment().format('LLL');
 
-// Tried to post from 50 - 60 were unsuccessful.
-var size = 65;
+// Start Grace at 200
+var size = 515;
 var additionBy = 1;
-var min = 55;
-var max = 56;
+var min = 505;
+var max = 506;
 var interval;
 
 // var size = readyTweetUsers.length;
@@ -51,7 +41,7 @@ interval = setInterval(function() {
       max = (size % additionBy) + Math.floor(size/additionBy)*additionBy;
     }
   }  
-}, _.random(0, readyTweetUsers.length-1) * 1000);
+}, 240 * 1000);
 
 
 function tweetStrenghCardWithMedia(users, i) {
@@ -67,7 +57,17 @@ function tweetStrenghCardWithMedia(users, i) {
         "Hi @" + screen_name + ",we created a profile for you based on your friends’ answers! Is this accurate?" + url,
         "Hey @" + screen_name + ", we made a psychometric profile for you based on your Twitter! Is it accurate?" + url,
         "Hey @" + screen_name + ", we created a psychometric personality profile for you! Is it accurate?" + url,
-        "Hey @" + screen_name + ", here are your personality strengths! Do you agree?" + url
+        "Hey @" + screen_name + ", here are your personality strengths! Do you agree?" + url,
+        "Hi @" + screen_name + ", we created a profile for you based on your friends’ answers! Is this accurate?" + url,
+        "Hey @" + screen_name + ", we made a psychometric profile for you based on your Twitter! Is it accurate?" + url,
+        "Hey @" + screen_name + ", we created a psychometric personality profile for you! Is it accurate?" + url,
+        "Hey @" + screen_name + ", here are your personality strengths! Do you agree?" + url,
+        "What’s up @" + screen_name + ", we made a personality profile for you! What do you think?" + url,
+        "Hey @" + screen_name + ", we made a personality profile for you! Please tell us if it’s accurate!" + url,
+        "Hi @" + screen_name + ", check out the psychometric profile we made for you! What do you think?" + url,
+        "What’s up @" + screen_name + ", check out the personality profile we made for you! Do you agree?" + url,
+        "Hello @" + screen_name + ", check out the psychometric personality profile we made for you! Do you agree?" + url,
+        "How are you @" + screen_name + ",check out the personality profile we made for you! Do you agree with it?" + url
       ]
       rand = _.random(0, tweet.length-1);
 
@@ -105,7 +105,7 @@ function tweetStrenghCardWithMedia(users, i) {
     }
 
     readyTweetUsers[i].posted_time = today;
-    readyTweetUsers[i].status_action = "PostedMedia"
+    readyTweetUsers[i].status_action = "PostedMediaByFrank"
     
     // readyTweetUsers[i].num = i;
 
@@ -118,7 +118,8 @@ function tweetStrenghCardWithMedia(users, i) {
 
    
     twitterHandlers.push(_.pluck(readyTweetUsers, 'screen_name')[i]);
-      console.log(twitterHandlers)
+      // console.log(twitterHandlers)
+      console.log("Frank posted users :", i, users[i].screen_name, users[i].num)
 
 
     fs.writeFile('./json/already_tweeted.json', JSON.stringify(twitterHandlers, null, 2), function (err) {

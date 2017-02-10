@@ -1,11 +1,10 @@
 var Twit = require('twit');
 var moment = require('moment');
-var config = require('./config_scrappy');
+var config = require('./config').scrappymcgyver;
 var utils = require('./utils');
 var fs = require('fs');
 var T = new Twit(config);
 var _ = require('underscore');
-
 
 
 
@@ -209,10 +208,11 @@ var filterUsers = function(listOfUsers) {
 }
 //E: RETURN FILTERED TWITTER USER OBJECT
 
-var size = twitterHandlers.length;
+// var size = twitterHandlers.length;
+var size = 49739;
 var additionBy = 100;
-var min = 0;
-var max = 100;
+var min = 19902;
+var max = 20000;
 var interval;
 var limitHundred;
 

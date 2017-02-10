@@ -51,7 +51,7 @@ let getBlendSentence = function(personalTypes,blendSentences) {
 
 
 let filloutProfiles = function(json, pa, sw, pabs, personalTypes,StrengthWords, blendSentences){
-  var posted_time = "", status_action = "", prof_url = "", note = "", screenshot_path = "";
+  var posted_time = "", status_action = "", prof_url = "", note = "", screenshot_path = "", num = "";
   for(var i = 0; i<=json.length; i++) {
     for(var key in json[i]) {
       if(!(pa in json)) {
@@ -81,13 +81,16 @@ let filloutProfiles = function(json, pa, sw, pabs, personalTypes,StrengthWords, 
       if(!(screenshot_path in json)) {
         json[i].screenshot_path = "";
       }
+      if(!(num in json)) {
+        json[i].num = i;
+      }
     }
   }
   return json;
 }
 
 var profileData = filloutProfiles(Users, "personal_archetype", "strength_words", "personal_archetype_blend_sentences", PsycheData.PersonalArchetypes, PsycheData.StrengthWords, PsycheData.PersonalArchetypesBlendSentences);
-fs.writeFile('./json/profiles.json', JSON.stringify(profileData, null, ' '), 'utf8', function(err) {
+fs.writeFile('./json/omar_profiles.json', JSON.stringify(profileData, null, ' '), 'utf8', function(err) {
     if (err) throw err;
     console.log('file saved');
 });

@@ -1,6 +1,6 @@
 var Twit = require('twit');
 var moment = require('moment');
-var config = require('./config').GraceGoodCo;
+var config = require('./config').AmandaGoodCo;
 var fs = require('fs');
 var T = new Twit(config);
 var _ = require('underscore');
@@ -15,10 +15,10 @@ var readyTweetUsers = require(file);
 var today = moment().format('LLL');
 
 // Start Grace at 200
-var size = 275;
+var size = 315;
 var additionBy = 1;
-var min = 255;
-var max = 256;
+var min = 305;
+var max = 306;
 var interval;
 
 // var size = readyTweetUsers.length;
@@ -41,7 +41,7 @@ interval = setInterval(function() {
       max = (size % additionBy) + Math.floor(size/additionBy)*additionBy;
     }
   }  
-}, 450 * 1000);
+}, 350 * 1000);
 
 
 function tweetStrenghCardWithMedia(users, i) {
@@ -105,7 +105,7 @@ function tweetStrenghCardWithMedia(users, i) {
     }
 
     readyTweetUsers[i].posted_time = today;
-    readyTweetUsers[i].status_action = "PostedMediaByGrace"
+    readyTweetUsers[i].status_action = "PostedMediaByAmanda"
     
     // readyTweetUsers[i].num = i;
 
@@ -119,7 +119,7 @@ function tweetStrenghCardWithMedia(users, i) {
    
     twitterHandlers.push(_.pluck(readyTweetUsers, 'screen_name')[i]);
       // console.log(twitterHandlers)
-      console.log("Grace posted users :", i, users[i].screen_name, users[i].num)
+      console.log("Amanda posted users :", i, users[i].screen_name, users[i].num)
 
 
     fs.writeFile('./json/already_tweeted.json', JSON.stringify(twitterHandlers, null, 2), function (err) {

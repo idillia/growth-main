@@ -10,6 +10,9 @@ import configureStore from './store/configureStore';
 import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
+import './utils/detectDevice'
+
+
 
 
 require("font-awesome-webpack");
@@ -18,6 +21,7 @@ const Bootstrap = require('bootstrap-sass');
 Bootstrap.$ = $;
 require('../node_modules/bootstrap-sass/assets/javascripts/bootstrap');
 import '../node_modules/toastr/build/toastr.min.css';
+import './utils/ga'
 
 
 

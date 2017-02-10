@@ -1,6 +1,6 @@
 var Twit = require('twit');
 var moment = require('moment');
-var config = require('./config').GraceGoodCo;
+var config = require('./config').anawremer;
 var fs = require('fs');
 var T = new Twit(config);
 var _ = require('underscore');
@@ -9,16 +9,25 @@ var fs = require('fs');
 var file = './json/profiles.json';
 var readyTweetUsers = require(file);
 
+// var tweeted = './json/already_tweeted.json';
+// var already_tweeted = require(tweeted);
+
+
+// var file = './db_fire/tweeted_users.json';
+// var readyTweetUsers = require(file);
+
+// var tweeted = './json/already_tweeted.json';
+// var already_tweeted = require(tweeted);
+
  var twitterHandlers = [];
 
 
 var today = moment().format('LLL');
 
-// Start Grace at 200
-var size = 275;
+var size = 200;
 var additionBy = 1;
-var min = 255;
-var max = 256;
+var min = 160;
+var max = 161;
 var interval;
 
 // var size = readyTweetUsers.length;
@@ -26,6 +35,9 @@ var interval;
 // var min = 0;
 // var max = 1;
 // var interval;
+
+var randomTime = 60;
+
 
 interval = setInterval(function() { 
   for (var j = min; j < max; j++) {
@@ -41,7 +53,7 @@ interval = setInterval(function() {
       max = (size % additionBy) + Math.floor(size/additionBy)*additionBy;
     }
   }  
-}, 450 * 1000);
+}, 305*1000);
 
 
 function tweetStrenghCardWithMedia(users, i) {
@@ -74,6 +86,11 @@ function tweetStrenghCardWithMedia(users, i) {
       return tweet[rand];
     }();
 
+    // randomTime = function(){
+    //   return _.random(200, readyTweetUsers.length-1);
+    // }();
+
+
 
     var filename = "images/screenshots/" + screen_name + ".png";
 
@@ -105,7 +122,7 @@ function tweetStrenghCardWithMedia(users, i) {
     }
 
     readyTweetUsers[i].posted_time = today;
-    readyTweetUsers[i].status_action = "PostedMediaByGrace"
+    readyTweetUsers[i].status_action = "PostedMediaByAna"
     
     // readyTweetUsers[i].num = i;
 
@@ -118,8 +135,9 @@ function tweetStrenghCardWithMedia(users, i) {
 
    
     twitterHandlers.push(_.pluck(readyTweetUsers, 'screen_name')[i]);
-      // console.log(twitterHandlers)
-      console.log("Grace posted users :", i, users[i].screen_name, users[i].num)
+      // console.log(randomTime)
+      console.log("Ana posted users :", i, users[i].screen_name)
+
 
 
     fs.writeFile('./json/already_tweeted.json', JSON.stringify(twitterHandlers, null, 2), function (err) {

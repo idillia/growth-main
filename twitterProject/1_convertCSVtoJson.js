@@ -2,7 +2,7 @@ var fs = require('fs');
 var _ = require('underscore');
 
 
-var csvFilePath = './csv/INFJ_5848.csv';
+var csvFilePath = './csv/all.csv';
 var jsonFilePathOutput = './json/twitterHandlers.json'
 
 
